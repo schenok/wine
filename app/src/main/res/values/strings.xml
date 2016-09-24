@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Wine Mate</string>
+    <string name="from_camera">Take Photograph of Menu</string>
+    <string name="from_gallery">Import Menu from Gallery</string>
+</resources>
