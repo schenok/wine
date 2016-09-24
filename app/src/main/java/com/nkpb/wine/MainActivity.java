@@ -15,8 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 
-
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+
+    private static final int GALLERY_IMAGE_RESULT = 0;
+    private static final int CAMERA_IMAGE_RESULT = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.from_camera:
-                // call to fromCamera(item); return true;
-                return false;
+                getPictureFromCamera(item);
+                return true;
             case R.id.from_gallery:
                 getPictureFromGallery(item);
                 return true;
@@ -45,7 +47,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 return false;
         }
     }
-    private static final int GALLERY_IMAGE_RESULT = 0;
+
+    private void getPictureFromCamera(MenuItem item) {
+        // create an intent to redirect control to the camera
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, CAMERA_IMAGE_RESULT);
+    }
+
     private void getPictureFromGallery(MenuItem item) {
         // if we don't have permission to read from storage don't continue
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
@@ -61,12 +69,20 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == GALLERY_IMAGE_RESULT && resultCode == Activity.RESULT_OK) {
+        if (resultCode != Activity.RESULT_OK) {
             if (data == null) {
                 //Display an error, redirect back to main.... something
                 return;
             }
         }
+        if (requestCode == GALLERY_IMAGE_RESULT) {
+            getSelectedImageAndRedirect(data);
+        } else if (requestCode == CAMERA_IMAGE_RESULT) {
+            getSelectedImageAndRedirect(data);
+        }
+    }
+
+    private void getSelectedImageAndRedirect(Intent data) {
         Uri selectedImage = data.getData();
         String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
