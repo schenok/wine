@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 public class ViewSelectedMenuActivity extends AppCompatActivity {
@@ -26,5 +27,9 @@ public class ViewSelectedMenuActivity extends AppCompatActivity {
                 imageView.setImageBitmap(bitmap);
             }
         }
+    }
+
+    public void uploadFile(View view) {
+//        FileUploadHelper helper = new FileUploadHelper(this);
     }
 }
