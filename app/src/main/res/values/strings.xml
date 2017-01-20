@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Wine Mate</string>
+    <!-- menu text -->
     <string name="from_camera">Take Photograph of Menu</string>
     <string name="from_gallery">Import Menu from Gallery</string>
+    <string name="view_profile">View my profile</string>
+    <!-- profile screen -->
+    <string name="profile_title">My Wine Profile</string>
+    <string name="profile_title_white">White</string>
+    <string name="profile_title_red">Red</string>
+    <string name="profile_title_balance">Balance</string>
+    <string name="profile_wine_title">Wine List</string>
 </resources>
