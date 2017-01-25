@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".ViewSelectedMenuActivity" />
         <activity android:name=".UploadMenuActivity" />
-        <activity android:name=".ViewProfileActivity"></activity>
+        <activity android:name=".ViewProfileActivity" />
+        <activity android:name=".SaveWineToProfileActivity"></activity>
     </application>
 
 </manifest>

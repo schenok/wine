@@ -10,4 +10,25 @@
     <string name="profile_title_red">Red</string>
     <string name="profile_title_balance">Balance</string>
     <string name="profile_wine_title">Wine List</string>
+    <!-- manually add wine -->
+    <string-array name="wine_classifications">
+        <item>Red</item>
+        <item>White</item>
+    </string-array>
+    <string-array name="wine_white_varietals">
+        <item>Chardonnay</item>
+        <item>Vermentino</item>
+        <item>Verdelho</item>
+        <item>Semillion</item>
+        <item>Riesling</item>
+    </string-array>
+    <string-array name="wine_red_varietals">
+        <item>Cabernet</item>
+        <item>Sangiovese</item>
+        <item>Franc</item>
+        <item>Zinfandel</item>
+        <item>Merlot</item>
+        <item>Pinot Noir</item>
+        <item>Shiraz</item>
+    </string-array>
 </resources>

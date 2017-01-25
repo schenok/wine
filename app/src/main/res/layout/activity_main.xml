@@ -47,7 +47,8 @@
             android:id="@+id/buttonSaveWineToProfile"
             android:layout_gravity="center_horizontal"
             android:paddingRight="10dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:onClick="saveWineToProfile"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
