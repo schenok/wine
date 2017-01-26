@@ -3,8 +3,6 @@ package com.nkpb.wine;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.util.Log;
 
@@ -38,6 +36,8 @@ public class ViewProfileActivity extends AppCompatActivity {
         retrievedData.put("Red", 66d);
         CategorySeries balanceDataset = new CategorySeries("Balance");
         DefaultRenderer renderer = new DefaultRenderer();
+        renderer.setZoomEnabled(false);
+        renderer.setPanEnabled(false);
         int i=0;
         for (Map.Entry<String, Double> entry : retrievedData.entrySet()) {
             balanceDataset.add(entry.getKey(), entry.getValue());
@@ -68,6 +68,8 @@ public class ViewProfileActivity extends AppCompatActivity {
         retrievedData.put("Shiraz", 8d);
         CategorySeries redDataset = new CategorySeries("Red");
         DefaultRenderer renderer = new DefaultRenderer();
+        renderer.setZoomEnabled(false);
+        renderer.setPanEnabled(false);
         int i=0;
         for (Map.Entry<String, Double> entry : retrievedData.entrySet()) {
             redDataset.add(entry.getKey(), entry.getValue());
@@ -96,6 +98,8 @@ public class ViewProfileActivity extends AppCompatActivity {
         retrievedData.put("Riesling", 10d);
         CategorySeries whiteDataset = new CategorySeries("White");
         DefaultRenderer renderer = new DefaultRenderer();
+        renderer.setZoomEnabled(false);
+        renderer.setPanEnabled(false);
         int i=0;
         for (Map.Entry<String, Double> entry : retrievedData.entrySet()) {
             whiteDataset.add(entry.getKey(), entry.getValue());
