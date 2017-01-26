@@ -15,9 +15,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter wine details"
             android:textSize="20dp"
@@ -28,58 +29,76 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Classification (Red/White)"/>
+            android:layout_marginRight="20dp"
+            android:text="Classification "/>
+
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/wine_classifications"/>
+            android:entries="@array/wine_classifications"
+            android:id="@+id/saveWine_classifications"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Varietal (Shiraz/Chardonnay)"/>
+            android:layout_marginRight="20dp"
+            android:text="Varietal "/>
+
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/wine_white_varietals"/>
+            android:id="@+id/saveWine_varietals"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="73dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date"/>
+            android:layout_marginRight="20dp"
+            android:text="Date "/>
 
-        <!--<DatePicker-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:calendarViewShown="true"/>-->
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:calendarViewShown="false"
+            android:spinnersShown="true"
+            android:datePickerMode="spinner"
+            android:id="@+id/saveWine_date"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rating (1-5)"/>
+            android:layout_marginRight="20dp"
+            android:text="Rating (1-5) "/>
+
         <RatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"/>
+            android:numStars="5"
+            android:id="@+id/saveWine_stars"/>
     </LinearLayout>
 
 </LinearLayout>
