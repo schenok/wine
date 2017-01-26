@@ -15,20 +15,4 @@
         <item>Red</item>
         <item>White</item>
     </string-array>
-    <string-array name="wine_white_varietals">
-        <item>Chardonnay</item>
-        <item>Vermentino</item>
-        <item>Verdelho</item>
-        <item>Semillion</item>
-        <item>Riesling</item>
-    </string-array>
-    <string-array name="wine_red_varietals">
-        <item>Cabernet</item>
-        <item>Sangiovese</item>
-        <item>Franc</item>
-        <item>Zinfandel</item>
-        <item>Merlot</item>
-        <item>Pinot Noir</item>
-        <item>Shiraz</item>
-    </string-array>
 </resources>

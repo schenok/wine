@@ -1,5 +1,7 @@
 package com.nkpb.wine;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -9,13 +11,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 
 import com.nkpb.wine.db.VarietalContract;
 import com.nkpb.wine.db.WineDbHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SaveWineToProfileActivity extends AppCompatActivity {
@@ -38,6 +44,20 @@ public class SaveWineToProfileActivity extends AppCompatActivity {
         // setup listeners
         Spinner classificationSpinner = (Spinner) findViewById(R.id.saveWine_classifications);
         classificationSpinner.setOnItemSelectedListener(new WineClassificationSelectedListener());
+    }
+
+    public void saveWineToProfile(View v) {
+        Spinner spinner = (Spinner) findViewById(R.id.saveWine_classifications);
+        String classification = (String)spinner.getSelectedItem();
+        spinner = (Spinner) findViewById(R.id.saveWine_varietals);
+        String varietal = (String)spinner.getSelectedItem();
+        DatePicker datePicker = (DatePicker) findViewById(R.id.saveWine_date);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = sdf.format(new Date(datePicker.getYear()-1900, datePicker.getMonth(), datePicker.getDayOfMonth()));
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.saveWine_stars);
+        float stars = ratingBar.getRating();
+        Log.d("SaveWine", "Selected values: " + classification + "," + varietal + "," + dateString + "," + stars);
+        finish();
     }
 
     public class WineClassificationSelectedListener implements OnItemSelectedListener {

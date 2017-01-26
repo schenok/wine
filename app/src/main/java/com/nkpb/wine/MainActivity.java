@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         popup.show();
     }
 
-    public void saveWineToProfile(View v) {
+    public void addWineToProfile(View v) {
         Intent intent = new Intent(this, SaveWineToProfileActivity.class);
         startActivity(intent);
     }
